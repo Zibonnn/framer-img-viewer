@@ -7,6 +7,27 @@
     <meta name="description" content="Step-by-step guide to install and use the Image Viewer script on your website.">
     <link rel="stylesheet" href="styles.css">
     <script src="image-viewer.js"></script>
+    <script>
+        function copyScript() {
+            const scriptCode = document.getElementById('script-code').textContent;
+            navigator.clipboard.writeText(scriptCode).then(function() {
+                const copyBtn = document.querySelector('.copy-btn');
+                const originalText = copyBtn.innerHTML;
+                copyBtn.innerHTML = `
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                    Copied!
+                `;
+                copyBtn.classList.add('copied');
+                
+                setTimeout(function() {
+                    copyBtn.innerHTML = originalText;
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -52,7 +73,13 @@
                 <div class="method-content">
                     <p>Add this single line to your website's <code>&lt;head&gt;</code> section:</p>
                     <div class="code-block">
-                        <code>&lt;script src="https://raw.githubusercontent.com/Zibonnn/framer-img-viewer/main/image-viewer.js"&gt;&lt;/script&gt;</code>
+                        <code id="script-code">&lt;script src="https://raw.githubusercontent.com/Zibonnn/framer-img-viewer/main/image-viewer.js"&gt;&lt;/script&gt;</code>
+                        <button class="copy-btn" onclick="copyScript()">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                            </svg>
+                            Copy
+                        </button>
                     </div>
                     <div class="method-steps">
                         <div class="step">
@@ -67,9 +94,8 @@
                             <div class="step-content">
                                 <h4>Add to your HTML</h4>
                                 <p>Paste the script tag in your <code>&lt;head&gt;</code> section</p>
-                                <div class="screenshot-placeholder">
-                                    <p>📸 Screenshot: HTML head section with script tag</p>
-                                    <p><em>Add your screenshot to img/installation-1.png</em></p>
+                                <div class="screenshot-container">
+                                    <img src="img/installation-1.webp" alt="HTML head section with script tag" class="installation-screenshot">
                                 </div>
                             </div>
                         </div>
@@ -84,41 +110,7 @@
                 </div>
             </div>
 
-            <!-- Method 2: Copy and Paste -->
-            <div class="method-card">
-                <div class="method-header">
-                    <h3>Method 2: Copy and Paste</h3>
-                    <span class="method-badge">Self-hosted</span>
-                </div>
-                <div class="method-content">
-                    <p>Download the script and include it directly in your HTML:</p>
-                    <div class="method-steps">
-                        <div class="step">
-                            <div class="step-number">1</div>
-                            <div class="step-content">
-                                <h4>Download the script</h4>
-                                <p>Copy the contents of <code>image-viewer.js</code></p>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <div class="step-number">2</div>
-                            <div class="step-content">
-                                <h4>Add to your HTML</h4>
-                                <p>Paste the script between <code>&lt;script&gt;</code> tags in your <code>&lt;head&gt;</code></p>
-                                <div class="code-block">
-                                    <code>&lt;script&gt;<br>
-&nbsp;&nbsp;// Paste the entire script content here<br>
-&lt;/script&gt;</code>
-                                </div>
-                                <div class="screenshot-placeholder">
-                                    <p>📸 Screenshot: HTML with embedded script</p>
-                                    <p><em>Add your screenshot to img/installation-2.png</em></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
 
             <!-- Method 3: Framer Integration -->
             <div class="method-card">
@@ -128,41 +120,16 @@
                 </div>
                 <div class="method-content">
                     <p>Perfect for Framer websites with CMS content:</p>
-                    <div class="method-steps">
-                        <div class="step">
-                            <div class="step-number">1</div>
-                            <div class="step-content">
-                                <h4>Open Framer Settings</h4>
-                                <p>Go to your Framer project settings</p>
-                                <div class="screenshot-placeholder">
-                                    <p>📸 Screenshot: Framer project settings</p>
-                                    <p><em>Add your screenshot to img/framer-settings.png</em></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <div class="step-number">2</div>
-                            <div class="step-content">
-                                <h4>Navigate to Custom Code</h4>
-                                <p>Find the "Custom Code" section in your settings</p>
-                                <div class="screenshot-placeholder">
-                                    <p>📸 Screenshot: Custom Code section</p>
-                                    <p><em>Add your screenshot to img/framer-custom-code.png</em></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <div class="step-number">3</div>
-                            <div class="step-content">
-                                <h4>Add the Script</h4>
-                                <p>Paste the script in the "Head" section and publish</p>
-                                <div class="screenshot-placeholder">
-                                    <p>📸 Screenshot: Script added to head section</p>
-                                    <p><em>Add your screenshot to img/framer-head-script.png</em></p>
-                                </div>
-                            </div>
-                        </div>
+                    
+                    <div class="screenshot-container">
+                        <img src="img/installation-1.webp" alt="Framer Custom Code section" class="installation-screenshot">
                     </div>
+                    
+                    <ol class="framer-steps">
+                        <li><strong>Open Framer Settings</strong> - Go to your Framer project settings</li>
+                        <li><strong>Navigate to Custom Code</strong> - Find the "Custom Code" section in your settings</li>
+                        <li><strong>Add the Script</strong> - Paste the script in the "Head" section and publish</li>
+                    </ol>
                 </div>
             </div>
         </div>
