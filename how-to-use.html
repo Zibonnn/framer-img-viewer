@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How To Use - Image Viewer Installation Guide</title>
+    <meta name="description" content="Step-by-step guide to install and use the Image Viewer script on your website.">
+    <link rel="stylesheet" href="styles.css">
+    <script src="image-viewer.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Image Viewer</h2>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="how-to-use.html" class="active">How To Use</a>
+                <a href="https://github.com/Zibonnn/framer-img-viewer" target="_blank" rel="noopener" class="github-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>How To Use Image Viewer</h1>
+            <p>Complete installation guide for adding clickable image modals to your website</p>
+        </div>
+    </section>
+
+    <!-- Installation Methods -->
+    <section class="installation">
+        <div class="container">
+            <h2 class="section-title">Installation Methods</h2>
+            
+            <!-- Method 1: Direct Script Tag -->
+            <div class="method-card">
+                <div class="method-header">
+                    <h3>Method 1: Direct Script Tag (Recommended)</h3>
+                    <span class="method-badge">Easiest</span>
+                </div>
+                <div class="method-content">
+                    <p>Add this single line to your website's <code>&lt;head&gt;</code> section:</p>
+                    <div class="code-block">
+                        <code>&lt;script src="https://raw.githubusercontent.com/Zibonnn/framer-img-viewer/main/image-viewer.js"&gt;&lt;/script&gt;</code>
+                    </div>
+                    <div class="method-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Copy the script URL</h4>
+                                <p>Use the URL above or download the script from GitHub</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Add to your HTML</h4>
+                                <p>Paste the script tag in your <code>&lt;head&gt;</code> section</p>
+                                <div class="screenshot-placeholder">
+                                    <p>📸 Screenshot: HTML head section with script tag</p>
+                                    <p><em>Add your screenshot to img/installation-1.png</em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Test it out</h4>
+                                <p>Refresh your page and click on any image</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Method 2: Copy and Paste -->
+            <div class="method-card">
+                <div class="method-header">
+                    <h3>Method 2: Copy and Paste</h3>
+                    <span class="method-badge">Self-hosted</span>
+                </div>
+                <div class="method-content">
+                    <p>Download the script and include it directly in your HTML:</p>
+                    <div class="method-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Download the script</h4>
+                                <p>Copy the contents of <code>image-viewer.js</code></p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Add to your HTML</h4>
+                                <p>Paste the script between <code>&lt;script&gt;</code> tags in your <code>&lt;head&gt;</code></p>
+                                <div class="code-block">
+                                    <code>&lt;script&gt;<br>
+&nbsp;&nbsp;// Paste the entire script content here<br>
+&lt;/script&gt;</code>
+                                </div>
+                                <div class="screenshot-placeholder">
+                                    <p>📸 Screenshot: HTML with embedded script</p>
+                                    <p><em>Add your screenshot to img/installation-2.png</em></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Method 3: Framer Integration -->
+            <div class="method-card">
+                <div class="method-header">
+                    <h3>Method 3: Framer Integration</h3>
+                    <span class="method-badge">Framer specific</span>
+                </div>
+                <div class="method-content">
+                    <p>Perfect for Framer websites with CMS content:</p>
+                    <div class="method-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Open Framer Settings</h4>
+                                <p>Go to your Framer project settings</p>
+                                <div class="screenshot-placeholder">
+                                    <p>📸 Screenshot: Framer project settings</p>
+                                    <p><em>Add your screenshot to img/framer-settings.png</em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Navigate to Custom Code</h4>
+                                <p>Find the "Custom Code" section in your settings</p>
+                                <div class="screenshot-placeholder">
+                                    <p>📸 Screenshot: Custom Code section</p>
+                                    <p><em>Add your screenshot to img/framer-custom-code.png</em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Add the Script</h4>
+                                <p>Paste the script in the "Head" section and publish</p>
+                                <div class="screenshot-placeholder">
+                                    <p>📸 Screenshot: Script added to head section</p>
+                                    <p><em>Add your screenshot to img/framer-head-script.png</em></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customization -->
+    <section class="customization">
+        <div class="container">
+            <h2 class="section-title">Customization</h2>
+            <p class="section-subtitle">The script works out of the box, but you can customize it to match your design</p>
+            
+            <div class="customization-grid">
+                <div class="custom-card">
+                    <h3>Modal Background</h3>
+                    <p>Change the overlay color by modifying this line in the script:</p>
+                    <div class="code-block">
+                        <code>background: rgba(0, 0, 0, 0.9);</code>
+                    </div>
+                    <p>Examples:</p>
+                    <ul>
+                        <li><code>rgba(0, 0, 0, 0.8)</code> - Lighter overlay</li>
+                        <li><code>rgba(255, 255, 255, 0.9)</code> - White overlay</li>
+                        <li><code>rgba(0, 123, 255, 0.9)</code> - Blue overlay</li>
+                    </ul>
+                </div>
+                
+                <div class="custom-card">
+                    <h3>Image Size</h3>
+                    <p>Adjust the maximum size of images in the modal:</p>
+                    <div class="code-block">
+                        <code>max-width: 90%;<br>max-height: 90%;</code>
+                    </div>
+                    <p>Change to:</p>
+                    <ul>
+                        <li><code>max-width: 80%</code> - Smaller images</li>
+                        <li><code>max-width: 95%</code> - Larger images</li>
+                        <li><code>max-width: 600px</code> - Fixed width</li>
+                    </ul>
+                </div>
+                
+                <div class="custom-card">
+                    <h3>Close Button</h3>
+                    <p>Customize the close button appearance:</p>
+                    <div class="code-block">
+                        <code>font-size: 30px;<br>color: white;</code>
+                    </div>
+                    <p>You can change:</p>
+                    <ul>
+                        <li>Font size and color</li>
+                        <li>Position (top, right, bottom, left)</li>
+                        <li>Background and border</li>
+                        <li>Replace × with any symbol</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Troubleshooting -->
+    <section class="troubleshooting">
+        <div class="container">
+            <h2 class="section-title">Troubleshooting</h2>
+            
+            <div class="troubleshooting-grid">
+                <div class="trouble-card">
+                    <h3>Images not clickable?</h3>
+                    <div class="trouble-solution">
+                        <h4>Possible causes:</h4>
+                        <ul>
+                            <li>Script not loaded properly</li>
+                            <li>Images loaded after script initialization</li>
+                            <li>CSS conflicts preventing clicks</li>
+                        </ul>
+                        <h4>Solutions:</h4>
+                        <ul>
+                            <li>Check browser console for errors</li>
+                            <li>Ensure script is in <code>&lt;head&gt;</code> section</li>
+                            <li>Refresh the page</li>
+                            <li>Check if images have valid <code>src</code> attributes</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="trouble-card">
+                    <h3>Modal not appearing?</h3>
+                    <div class="trouble-solution">
+                        <h4>Possible causes:</h4>
+                        <ul>
+                            <li>Z-index conflicts</li>
+                            <li>CSS hiding the modal</li>
+                            <li>JavaScript errors</li>
+                        </ul>
+                        <h4>Solutions:</h4>
+                        <ul>
+                            <li>Check for CSS conflicts with <code>z-index: 9999</code></li>
+                            <li>Ensure images have valid <code>src</code> attributes</li>
+                            <li>Check browser console for JavaScript errors</li>
+                            <li>Try a different browser</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="trouble-card">
+                    <h3>Not working with CMS content?</h3>
+                    <div class="trouble-solution">
+                        <h4>Possible causes:</h4>
+                        <ul>
+                            <li>Content loads after script initialization</li>
+                            <li>CMS uses different image structure</li>
+                            <li>Dynamic content not detected</li>
+                        </ul>
+                        <h4>Solutions:</h4>
+                        <ul>
+                            <li>The script includes multiple fallback mechanisms</li>
+                            <li>Check console logs for initialization messages</li>
+                            <li>Wait a few seconds for content to load</li>
+                            <li>Refresh the page</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Browser Support -->
+    <section class="browser-support">
+        <div class="container">
+            <h2 class="section-title">Browser Support</h2>
+            <div class="browser-grid">
+                <div class="browser-item">
+                    <div class="browser-icon">🌐</div>
+                    <h3>Chrome/Edge</h3>
+                    <p>Full support</p>
+                </div>
+                <div class="browser-item">
+                    <div class="browser-icon">🦊</div>
+                    <h3>Firefox</h3>
+                    <p>Full support</p>
+                </div>
+                <div class="browser-item">
+                    <div class="browser-icon">🍎</div>
+                    <h3>Safari</h3>
+                    <p>Full support</p>
+                </div>
+                <div class="browser-item">
+                    <div class="browser-icon">📱</div>
+                    <h3>Mobile Browsers</h3>
+                    <p>Full support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Image Viewer</h3>
+                    <p>A lightweight JavaScript solution for clickable image modals</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="how-to-use.html">How To Use</a>
+                    <a href="https://github.com/Zibonnn/framer-img-viewer" target="_blank" rel="noopener">GitHub</a>
+                </div>
+                <div class="footer-section">
+                    <h4>License</h4>
+                    <p>MIT License - Free to use in any project</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Image Viewer. Made with ❤️ for the web.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
