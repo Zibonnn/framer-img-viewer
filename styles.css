@@ -100,10 +100,10 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+    background: #000000;
     color: white;
     padding: 120px 0 80px;
-    min-height: 90vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
 }
@@ -198,7 +198,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 600px;
     width: 100%;
 }
 
