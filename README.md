@@ -1,5 +1,7 @@
 # Image Viewer - Lightweight JavaScript Image Modal
 
+🌐 **Live Demo**: [https://zibonnn.github.io/framer-img-viewer/](https://zibonnn.github.io/framer-img-viewer/)
+
 A lightweight JavaScript solution that automatically makes all images on a webpage clickable, opening them in a full-screen modal overlay. Perfect for CMS content where you can't use native lightbox features.
 
 ## 🌟 Features
@@ -133,6 +135,16 @@ MIT License - feel free to use in any project.
 - Check console logs for initialization messages
 - Try the test button if available
 
+## 👨‍💻 About the Creator
+
+**Zibon** - A passionate designer and developer who loves creating tools that make the web better.
+
+- 🌐 **Portfolio**: [zibon.design](https://zibon.design)
+- 📝 **Bangla Blog**: [zibonthinks.framer.ai](https://zibonthinks.framer.ai/) (Built this tool for this blog!)
+- 🎨 **Dribbble**: [dribbble.com/Zibon](https://dribbble.com/Zibon)
+- 🐦 **X (Twitter)**: [x.com/Zibonnn](https://x.com/Zibonnn)
+- ✉️ **Email**: zibon@duck.com
+
 ## 🌟 Made with ❤️
 
-This project is designed to make the web a better place, one clickable image at a time. 
+This project is designed to make the web a better place, one clickable image at a time. Built specifically for my Bangla blog to enhance the reading experience. 
