@@ -1,150 +1,111 @@
-# Image Viewer - Lightweight JavaScript Image Modal
+# 🚨 **WORK IN PROGRESS - DOES NOT WORK YET** 🚨
 
-🌐 **Live Demo**: [https://zibonnn.github.io/framer-img-viewer/](https://zibonnn.github.io/framer-img-viewer/)
+## ⚠️ **IMPORTANT NOTICE**
 
-A lightweight JavaScript solution that automatically makes all images on a webpage clickable, opening them in a full-screen modal overlay. Perfect for CMS content where you can't use native lightbox features.
+**This image viewer extension is currently NOT WORKING and is under active development.**
 
-## 🌟 Features
+### **Current Status:**
+- ❌ **Not functional** in Framer sites
+- ❌ **Multiple approaches attempted** but blocked by Framer restrictions
+- ❌ **CMS Rich Content limitations** prevent proper implementation
+- 🔄 **Work in progress** - exploring alternative solutions
 
-- ✅ **Automatic detection** of all images on the page
-- ✅ **Dynamic content support** - works with CMS content that loads after page load
-- ✅ **No dependencies** - pure vanilla JavaScript
-- ✅ **Ad-blocker friendly** - uses generic class names and no external requests
-- ✅ **Mobile responsive** - works on all screen sizes
-- ✅ **Keyboard accessible** - ESC key closes the modal
-- ✅ **Framer compatible** - designed to work with Framer websites
+### **Attempted Solutions:**
+1. ✅ **JavaScript-based lightbox** - Works locally, fails in Framer
+2. ✅ **Code overrides** - Attempted but doesn't work with Rich Content
+3. ✅ **CSS + Minimal JS** - Developed but still blocked by Framer
+4. ✅ **Multiple selector strategies** - All approaches tested
 
-## 🚀 Quick Start
+### **Technical Challenges:**
+- **Framer CMS Rich Content** has severe JavaScript restrictions
+- **Custom Code limitations** prevent DOM manipulation
+- **5,000 character limit** for Custom Code
+- **Security policies** block many lightbox approaches
 
-### Option 1: Direct Script Tag (Recommended)
-Add this single line to your website's `<head>` section:
+---
 
-```html
-<script src="https://raw.githubusercontent.com/Zibonnn/framer-img-viewer/main/image-viewer.js"></script>
-```
+# Image Viewer Extension for Framer
 
-### Option 2: Copy and Paste
-Copy the contents of `image-viewer.js` and paste it directly into your website's `<head>` section:
+## Overview
+A lightweight image lightbox/viewer extension designed to work with Framer's CMS Rich Content components. Currently exploring solutions to work around Framer's restrictions.
 
-```html
-<script>
-// Paste the entire script content here
-</script>
-```
+## Features (Planned)
+- 🖼️ **Automatic image detection** in Rich Content
+- 🔍 **Click to enlarge** functionality  
+- 📱 **Responsive design** for all devices
+- ⌨️ **Keyboard navigation** (ESC to close)
+- 🎨 **Smooth animations** and transitions
+- 🚫 **No CMS modifications** required
 
-### Option 3: Framer Integration
-1. Go to your Framer project settings
-2. Navigate to "Custom Code"
-3. Add the script to the "Head" section
-4. Publish your site
+## File Structure
 
-## 📖 Documentation
+### **Current Implementations:**
+- `image-viewer.js` - Various JavaScript approaches attempted
+- `css-lightbox.css` - CSS-only lightbox styles
+- `css-lightbox-helper.js` - Minimal JavaScript helper (2,525 chars)
+- `rich-content-override.tsx` - Framer code override attempt
+- `framer-minified.html` - Combined CSS+JS for Framer (3,632 chars)
 
-This repository includes a complete documentation website:
+### **Test Files:**
+- `test.html` - Local testing environment
+- `css-lightbox-test.html` - CSS lightbox testing
+- `how-to-use.html` - Implementation guide
 
-- **Home Page** (`index.html`) - Overview, features, and live demo
-- **How To Use** (`how-to-use.html`) - Detailed installation guide with screenshots
+### **Documentation:**
+- `README.md` - This file
+- `LICENSE` - MIT License
 
-## 🎯 How it Works
+## Browser Support
+- ✅ Chrome 60+
+- ✅ Firefox 55+
+- ✅ Safari 12+
+- ✅ Edge 79+
 
-Once installed, the script automatically:
-1. Scans the page for all `<img>` elements
-2. Makes them clickable with a pointer cursor
-3. Opens clicked images in a full-screen modal
-4. Continues monitoring for new images (useful for dynamic CMS content)
+## Character Count Status
+- **CSS + JS Combined:** 3,632 characters ✅ (under 5,000 limit)
+- **JavaScript only:** 2,525 characters ✅ (under 5,000 limit)
 
-### Technical Details
+## Development Notes
 
-- **Automatic Detection**: Scans the entire document for images
-- **Dynamic Monitoring**: Uses MutationObserver to detect new images added by CMS
-- **Multiple Initialization**: Tries several times to ensure it works with various loading patterns
-- **Event Handling**: Prevents event bubbling and handles clicks properly
+### **What Works Locally:**
+- ✅ Image detection and processing
+- ✅ Hover effects and visual feedback
+- ✅ Lightbox modal functionality
+- ✅ Keyboard and click-outside closing
+- ✅ Dynamic content detection
 
-## 🎨 Customization
+### **What Fails in Framer:**
+- ❌ Event handlers not attaching to CMS images
+- ❌ DOM manipulation restricted
+- ❌ Code overrides limited for Rich Content
+- ❌ Timing issues with Framer's loading
 
-The script is self-contained and doesn't require configuration, but you can modify the styles by editing the CSS in the script:
+### **Approaches Attempted:**
 
-- **Modal background**: Change `rgba(0, 0, 0, 0.9)` for different overlay colors
-- **Image size**: Modify `max-width: 90%` and `max-height: 90%` for different image sizes
-- **Close button**: Customize the `×` symbol or its styling
+#### **1. Standard JavaScript Lightbox**
+- **Status:** ❌ Failed
+- **Issue:** Framer's Custom Code restrictions
 
-## 🌐 Browser Support
+#### **2. Framer Code Overrides**  
+- **Status:** ❌ Failed
+- **Issue:** Rich Content component limitations
 
-- ✅ Chrome/Edge (Chromium)
-- ✅ Firefox
-- ✅ Safari
-- ✅ Mobile browsers
+#### **3. CSS-Only + Minimal JS**
+- **Status:** ❌ Failed  
+- **Issue:** Still blocked by Framer security
 
-## 📁 Repository Structure
+#### **4. External Hosted Solution**
+- **Status:** 🔄 To be explored
+- **Potential:** Iframe embedding approach
 
-```
-framer-img-viewer/
-├── image-viewer.js      # The working JavaScript script
-├── index.html           # Home page with demo
-├── how-to-use.html      # Detailed installation guide
-├── styles.css           # Modern CSS styling
-├── README.md            # This file
-├── LICENSE              # MIT license
-└── .gitignore           # Git ignore file
-```
+## Next Steps
+1. **Investigate iframe-based solutions**
+2. **Explore Framer's official component store**
+3. **Consider server-side image processing**
+4. **Test with different Framer plan tiers**
 
-## 🔧 Development
+## Contributing
+This project is currently in research phase. Contributions and ideas for working around Framer's restrictions are welcome.
 
-To run the documentation site locally:
-
-1. Clone the repository
-2. Open `index.html` in your browser
-3. Navigate between pages to see the full documentation
-
-## 📸 Screenshots
-
-To add screenshots to the documentation:
-
-1. Create an `img/` folder in the root directory
-2. Add your screenshots with the following names:
-   - `installation-1.png` - HTML head section with script tag
-   - `installation-2.png` - HTML with embedded script
-   - `framer-settings.png` - Framer project settings
-   - `framer-custom-code.png` - Custom Code section
-   - `framer-head-script.png` - Script added to head section
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Make your changes
-3. Test thoroughly
-4. Submit a pull request
-
-## 📄 License
-
-MIT License - feel free to use in any project.
-
-## 🆘 Troubleshooting
-
-**Images not clickable?**
-- Check browser console for any errors
-- Ensure the script is loaded before your content
-- Try refreshing the page
-
-**Modal not appearing?**
-- Check if there are any CSS conflicts with `z-index: 9999`
-- Ensure images have valid `src` attributes
-
-**Not working with CMS content?**
-- The script includes multiple fallback mechanisms
-- Check console logs for initialization messages
-- Try the test button if available
-
-## 👨‍💻 About the Creator
-
-**Zibon** - A passionate designer and developer who loves creating tools that make the web better.
-
-- 🌐 **Portfolio**: [zibon.design](https://zibon.design)
-- 📝 **Bangla Blog**: [zibonthinks.framer.ai](https://zibonthinks.framer.ai/) (Built this tool for this blog!)
-- 🎨 **Dribbble**: [dribbble.com/Zibon](https://dribbble.com/Zibon)
-- 🐦 **X (Twitter)**: [x.com/Zibonnn](https://x.com/Zibonnn)
-- ✉️ **Email**: zibon@duck.com
-
-## 🌟 Made with ❤️
-
-This project is designed to make the web a better place, one clickable image at a time. Built specifically for my Bangla blog to enhance the reading experience. 
+## License
+MIT License - see LICENSE file for details. 

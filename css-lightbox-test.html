@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Lightbox Test - No CMS Modifications</title>
+    
+    <!-- Include the CSS lightbox styles -->
+    <link rel="stylesheet" href="css-lightbox.css">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* Simulate Framer Rich Content */
+        .rich-content {
+            background: #fafafa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px dashed #ddd;
+        }
+        
+        .rich-content h3 {
+            margin-top: 0;
+            color: #666;
+            text-align: center;
+        }
+        
+        .rich-content p {
+            line-height: 1.6;
+            margin: 15px 0;
+        }
+        
+        .rich-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 15px 0;
+            display: block;
+        }
+        
+        .info {
+            background: #e3f2fd;
+            border: 1px solid #2196f3;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .success {
+            background: #e8f5e8;
+            border: 1px solid #4caf50;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🖼️ CSS Lightbox Test</h1>
+        <p><strong>No CMS modifications required!</strong> This approach works with existing images.</p>
+        
+        <div class="test-section">
+            <h2>📋 How It Works</h2>
+            <div class="info">
+                <h4>✅ What You Need to Add to Framer:</h4>
+                <ol>
+                    <li><strong>CSS styles</strong> in Custom Code (Head) - handles all the visual styling</li>
+                    <li><strong>Minimal JavaScript</strong> in Custom Code (Head) - only handles click events (2,525 chars)</li>
+                </ol>
+                
+                <h4>✅ What You DON'T Need to Change:</h4>
+                <ul>
+                    <li>❌ No CMS content modifications</li>
+                    <li>❌ No image wrapping or special markup</li>
+                    <li>❌ No manual adding of links or attributes</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>🧪 Simulated Rich Content</h2>
+            <p>This simulates your Framer CMS Rich Content component:</p>
+            
+            <!-- This simulates Framer Rich Content -->
+            <div class="rich-content" data-framer-component-type="RichText">
+                <h3>📝 Sample CMS Content</h3>
+                
+                <p>This is regular text content from your CMS. You can add images normally without any special formatting:</p>
+                
+                <img src="img/cms-images.webp" alt="CMS Images Screenshot">
+                
+                <p>Here's another paragraph of text. The images above and below are automatically enhanced with lightbox functionality.</p>
+                
+                <img src="img/cms-page.avif" alt="CMS Page Screenshot">
+                
+                <p>And here's a third image to test multiple images in the same content:</p>
+                
+                <img src="img/installation-1.webp" alt="Installation Guide">
+                
+                <p>Notice how all images have:</p>
+                <ul>
+                    <li>✅ Hover effects (scale + shadow)</li>
+                    <li>✅ Cursor pointer</li>
+                    <li>✅ "Click to enlarge" message on hover</li>
+                    <li>✅ Click to open lightbox</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>🔄 Dynamic Content Test</h2>
+            <p>Test adding new images dynamically (simulates adding content to CMS):</p>
+            <button onclick="addNewImage()">Add New Image to Rich Content</button>
+            <div id="dynamic-content" class="rich-content" data-framer-component-type="RichText">
+                <h3>📝 Dynamically Added Content</h3>
+                <p>New images added here should automatically get lightbox functionality:</p>
+            </div>
+        </div>
+
+        <div class="success">
+            <h3>🎉 Ready for Framer!</h3>
+            <p>This solution should work perfectly in Framer because:</p>
+            <ul>
+                <li>✅ <strong>No CMS changes required</strong> - works with existing content</li>
+                <li>✅ <strong>Under 5,000 character limit</strong> - JavaScript is only 2,525 chars</li>
+                <li>✅ <strong>Automatic detection</strong> - finds all Rich Content images</li>
+                <li>✅ <strong>Framer-compatible</strong> - uses standard web technologies</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Include the minimal JavaScript helper -->
+    <script src="css-lightbox-helper.js"></script>
+
+    <script>
+        // Test function for dynamic content
+        let imageCount = 0;
+        function addNewImage() {
+            const container = document.getElementById('dynamic-content');
+            imageCount++;
+            
+            const p = document.createElement('p');
+            p.textContent = `Dynamically added image ${imageCount}:`;
+            container.appendChild(p);
+            
+            const img = document.createElement('img');
+            img.src = `https://picsum.photos/400/300?random=${Date.now()}`;
+            img.alt = `Dynamic Image ${imageCount}`;
+            container.appendChild(img);
+            
+            const p2 = document.createElement('p');
+            p2.textContent = 'This image was added after page load but should still have lightbox functionality!';
+            container.appendChild(p2);
+        }
+    </script>
+</body>
+</html> 

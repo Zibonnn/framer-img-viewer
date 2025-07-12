@@ -1,0 +1,168 @@
+/* Pure CSS Lightbox - No CMS Modifications Required */
+
+/* Style all images in rich content */
+[data-framer-component-type="RichText"] img {
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+    position: relative !important;
+}
+
+[data-framer-component-type="RichText"] img:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2) !important;
+}
+
+/* Add clickable overlay to each image using CSS */
+[data-framer-component-type="RichText"] img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* Add zoom indicator */
+[data-framer-component-type="RichText"] img::after {
+    content: '🔍 Click to enlarge';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 20px 10px 10px;
+    font-size: 12px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    border-radius: 0 0 8px 8px;
+}
+
+[data-framer-component-type="RichText"] img:hover::after {
+    opacity: 1;
+}
+
+/* Pure CSS Modal Structure */
+.css-image-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 999999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    align-items: center;
+    justify-content: center;
+}
+
+.css-image-modal.active {
+    display: flex !important;
+    opacity: 1;
+}
+
+.css-image-modal img {
+    max-width: 90% !important;
+    max-height: 90% !important;
+    object-fit: contain !important;
+    border-radius: 8px !important;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5) !important;
+    cursor: default !important;
+}
+
+.css-image-modal .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    z-index: 2;
+}
+
+.css-image-modal .close:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+.css-image-modal .close::before {
+    content: '×';
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .css-image-modal img {
+        max-width: 95% !important;
+        max-height: 95% !important;
+    }
+    
+    .css-image-modal .close {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+    }
+    
+    [data-framer-component-type="RichText"] img::after {
+        content: '🔍';
+        padding: 5px;
+        font-size: 16px;
+        bottom: 5px;
+        right: 5px;
+        left: auto;
+        background: rgba(0,0,0,0.7);
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Animation for image entrance */
+@keyframes modalImageIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.css-image-modal.active img {
+    animation: modalImageIn 0.3s ease;
+}
+
+/* Fallback for browsers that don't support modern CSS */
+@supports not (display: flex) {
+    .css-image-modal {
+        display: table;
+        text-align: center;
+    }
+    
+    .css-image-modal img {
+        display: table-cell;
+        vertical-align: middle;
+    }
+} 
